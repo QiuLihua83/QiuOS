@@ -1,0 +1,19 @@
+#!/bin/zsh
+
+NAME_ASM=boot.asm
+NAME_BIN=boot.bin
+NAME_IMG=a.img
+
+echo "now nasm is making ${NAME_BIN}..."
+echo -e '\n'
+nasm ${NAME_ASM} -o ${NAME_BIN}
+
+echo "now make ${NAME_IMG}"
+echo -e "\n"
+dd if=${NAME_BIN} of=${NAME_IMG} bs=512 count=1 conv=notrunc
+
+echo "finished !"
+echo -e "\n"
+
+echo "results:\n"
+ls -l
