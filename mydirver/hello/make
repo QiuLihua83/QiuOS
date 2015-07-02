@@ -1,0 +1,5 @@
+#!/bin/zsh
+
+
+make -C ~/git/linux SUBDIRS=$PWD modules
+
