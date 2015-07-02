@@ -2,12 +2,12 @@
 #include "linux/module.h"
 #include "linux/init.h"
 #include "linux/kernel.h"
-
+#include "linux/sched.h"
 
 static int __init Init(void)
 {
     printk(KERN_ALERT "hello qiulihua, initializing now......\n");
-
+    printk(KERN_ALERT "current process is : name=%s, pid=[%i]\n", current->comm, current->pid);
     return 0;
 }
 
