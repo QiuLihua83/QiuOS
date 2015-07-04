@@ -682,6 +682,8 @@ deps_/home/qiulihua/git/QiuOS/mydirver/hello/hello.o := \
   include/linux/selinux.h \
     $(wildcard include/config/security/selinux.h) \
   include/uapi/linux/magic.h \
+  include/linux/kdev_t.h \
+  include/uapi/linux/kdev_t.h \
 
 /home/qiulihua/git/QiuOS/mydirver/hello/hello.o: $(deps_/home/qiulihua/git/QiuOS/mydirver/hello/hello.o)
 
