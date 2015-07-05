@@ -725,6 +725,7 @@ deps_/home/qiulihua/git/QiuOS/mydirver/hello/hello.o := \
   include/uapi/linux/fcntl.h \
   arch/x86/include/uapi/asm/fcntl.h \
   include/uapi/asm-generic/fcntl.h \
+  include/linux/cdev.h \
 
 /home/qiulihua/git/QiuOS/mydirver/hello/hello.o: $(deps_/home/qiulihua/git/QiuOS/mydirver/hello/hello.o)
 
