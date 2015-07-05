@@ -9,6 +9,13 @@
 #include "linux/fcntl.h"
 #include "linux/cdev.h"
 
+
+void initDev(void);
+void releaseDev(void);
+ssize_t hello_read(struct file *pfile, char __user *buffer, size_t count, loff_t * offp);
+ssize_t hello_write(struct file *pfile, const char __user *buffer, size_t count, loff_t * offp);
+
+
 const unsigned int DEV_NUM = 1;
 
 static  dev_t  mydev;
@@ -17,10 +24,12 @@ struct  cdev   mycdev;
 
 struct file_operations hello_ops = {
     .owner = THIS_MODULE,
+    .read  = hello_read,
+    .write = hello_write,
 };
 
-void initDev(void);
-void releaseDev(void);
+
+
 
 static int __init Init(void)
 {
@@ -74,6 +83,20 @@ static void __exit Exit(void)
     printk(KERN_ALERT "hello qiulihua, exit now, bye bye !\n");
 }
 
+ssize_t hello_read(struct file *pfile, char __user *buffer, size_t count, loff_t * offp)
+{
+
+    printk(KERN_ALERT "you are reading data....\n");
+
+    return 0;
+}
+
+ssize_t hello_write(struct file *pfile, const char __user *buffer, size_t count, loff_t * offp)
+{
+    printk(KERN_ALERT "you are writing data....");
+
+    return 0;
+}
 
 module_init(Init);
 module_exit(Exit);
