@@ -5,7 +5,8 @@
 #include "linux/sched.h"
 #include "linux/file.h"
 #include "linux/kdev_t.h"
-
+#include "linux/fs.h"
+#include "linux/fcntl.h"
 
 static int __init Init(void)
 {
